@@ -1,0 +1,13 @@
+@CHARSET "UTF-8";
+
+.label {
+	font-weight: bold;
+}
+
+.observe {
+	color: graytext;
+}
+
+.observing {
+	color: black;
+}

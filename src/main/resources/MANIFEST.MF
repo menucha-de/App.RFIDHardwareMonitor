@@ -1,0 +1,24 @@
+Bundle-Name: Ha-VIS Custom RFID Hardware Monitor App
+Bundle-SymbolicName: havis.custom.harting.rfidhardwaremonitor
+Bundle-Version: 2.6.0
+Application-Name: RFID Monitor
+Implementation-Version: 2.6
+Bundle-ManifestVersion: 2
+Bundle-Vendor: HARTING IT_SD
+Havis-Bundle: 
+ /OSGI-INF/havis.custom.harting.rfidhardwaremonitor.properties
+Bundle-Activator: havis.custom.harting.rfidhardwaremonitor.osgi.Activator
+Import-Package: 
+ com.fasterxml.jackson.databind,
+ havis.net.rest.shared,
+ havis.net.rest.shared.data,
+ havis.util.monitor,
+ havis.middleware.misc,
+ havis.middleware.tdt,
+ javax.ws.rs,
+ javax.ws.rs.core,
+ javax.ws.rs.ext,
+ org.osgi;resolution:=optional,
+ org.osgi.framework;resolution:=optional,
+ org.osgi.util.tracker;resolution:=optional
+

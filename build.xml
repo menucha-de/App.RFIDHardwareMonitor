@@ -1,0 +1,52 @@
+<?xml version="1.0"?>
+<project name="havis.custom.harting.rfidhardwaremonitor" default="publish" xmlns:ivy="antlib:org.apache.ivy.ant" xmlns:if="ant:if">
+
+	<property file="${basedir}/build.properties" />
+
+	<import>
+		<url url="${ivy.url}/ant/default.xml" />
+	</import>
+
+	<target name="clean-cache">
+		<clean-cache />
+	</target>
+
+	<target name="clean-all">
+		<clean-all />
+	</target>
+
+	<target name="compile">
+		<compile dst="${build.dir.classes}">
+			<src path="${src.main.dir}" />
+		</compile>
+	</target>
+
+	<target name="jar" depends="compile">
+		<compile-gwt />
+		<jar-bin />
+	</target>
+
+	<target name="app" depends="jar">
+		<app name="havis.rfidhardwaremonitor">
+			<ivy:retrieve pattern="${build.dir}/tar/[artifact].[ext]" conf="runtime" log="quiet" />
+		</app>
+	</target>
+
+	<target name="test" depends="compile" unless="${skip.test}">
+		<test />
+	</target>
+
+	<target name="standalone" depends="app">
+		<standalone deb="false">
+			<extract name="havis.device.test.hardware.rf.app" />
+			<extract name="havis.device.test.hardware.io.app" />
+			<extract name="havis.middleware.tdt.deb" />
+			<extract name="havis.middleware.utils.deb" />
+		</standalone>
+	</target>
+
+	<target name="publish" depends="app">
+		<publish jar="false" app="false" />
+	</target>
+
+</project>
