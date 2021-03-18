@@ -1,13 +1,13 @@
 Bundle-Name: Ha-VIS Custom RFID Hardware Monitor App
-Bundle-SymbolicName: havis.custom.harting.rfidhardwaremonitor
+Bundle-SymbolicName: havis.app.rfidhardwaremonitor
 Bundle-Version: 2.7.0
 Application-Name: RFID Monitor
 Implementation-Version: 2.7
 Bundle-ManifestVersion: 2
-Bundle-Vendor: HARTING IT_SD
+Bundle-Vendor: Menucha Team <info@menucha.de>
 Havis-Bundle: 
- /OSGI-INF/havis.custom.harting.rfidhardwaremonitor.properties
-Bundle-Activator: havis.custom.harting.rfidhardwaremonitor.osgi.Activator
+ /OSGI-INF/havis.app.rfidhardwaremonitor.properties
+Bundle-Activator: havis.app.rfidhardwaremonitor.osgi.Activator
 Import-Package: 
  com.fasterxml.jackson.databind,
  havis.net.rest.shared,
